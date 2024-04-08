@@ -28,11 +28,12 @@ end
 
 local function inSideZone()
     Citizen.CreateThread(function()
+        DebugPrint("Creation de la thread")
         InZone = true
         Citizen.Wait(Config.cooldown.beforeFirstDamage * 1000)
         while InZone do
             local playerPed = PlayerPedId()
-            if IsEntityDead(playerPed) then
+            if IsPedDeadOrDying(playerPed) then
                 ESX.ShowNotification("Vous etes tombé coma dans la zone de radiation, vous devez etre obligatoirement amener par l'unité X")
                 SendNUIMessage({action = "Sound", value=false})
                 DebugPrint("Kill")
@@ -53,7 +54,7 @@ local function inSideZone()
 end
 
 Citizen.CreateThread(function()
-        radiationzone:OnPointInOut(PolyZone.GetPlayerPosition,function (isPointInside,point)
+        radiationzone:onPointInOut(PolyZone.getPlayerPosition,function (isPointInside,point)
             if isPointInside then
                 ESX.ShowNotification("Attention: tu es rentré dans la zone de radiation , tu as 1 minutes avant d'etre malade")
                 inSideZone()

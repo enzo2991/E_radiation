@@ -36,6 +36,7 @@ local function inSideZone()
             if IsPedDeadOrDying(playerPed) then
                 ESX.ShowNotification("Vous etes tombé coma dans la zone de radiation, vous devez etre obligatoirement amener par l'unité X")
                 SendNUIMessage({action = "Sound", value=false})
+                InZone = false
                 DebugPrint("Kill")
             else
                 if Config.teleportPlayer then

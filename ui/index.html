@@ -1,19 +1,20 @@
 <html>
     <head>
         <script>
-            var audioPlayer = null
+            var audioPlayer = null;
             window.addEventListener('message',function(event){
                 if(event.data.action == "Sound"){
                     if(event.data.value == true){
                         if(audioPlayer == null){
-                            audioPlayer = new Audio("./sound/effect.mp3")
-                            audioPlayer.loop = true
-                            audioPlayer.play()
+                            audioPlayer = new Audio("./sound/effect.mp3");
+                            audioPlayer.volume = 0.1;
+                            audioPlayer.loop = true;
+                            audioPlayer.play();
                         }
                     } else {
                         if(audioPlayer != null){
-                            audioPlayer.pause()
-                            audioPlayer = null
+                            audioPlayer.pause();
+                            audioPlayer = null;
                         }
                     }
                 }

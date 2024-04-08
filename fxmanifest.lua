@@ -11,7 +11,7 @@ shared_scripts {
 client_scripts {
     '@PolyZone/client.lua',
     'client/zone.lua',
-    'client/entitydamage.lua'
+    'client/entity.lua'
 }
 
 files {

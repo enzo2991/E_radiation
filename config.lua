@@ -6,4 +6,5 @@ Config.cooldown = {
     interval = 15,
 } -- in seconds
 Config.teleportPlayer = false
-Config.debug = true -- show grid and show print
+Config.teleportcoords = vec3(x,y,z)
+Config.debug = false -- show grid and show print

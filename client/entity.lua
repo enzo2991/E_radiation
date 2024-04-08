@@ -6,3 +6,7 @@ function DamagePlayer(playerped)
     end
     SetEntityHealth(playerped,health)
 end
+
+function TeleportPlayer(playerped,coords)
+    SetEntityCoords(playerped,coords.x,coords.y,Coords.z) 
+end
